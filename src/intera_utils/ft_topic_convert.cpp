@@ -32,9 +32,6 @@ int main(int argc, char **argv)
   ros::Publisher pub = nh.advertise<geometry_msgs::WrenchStamped>("/robot/limb/right/wrench",1);
 
 
-
-
-
   ROS_INFO("Ready to convert topics");
   while (ros::ok())
   {
