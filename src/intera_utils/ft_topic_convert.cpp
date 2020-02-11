@@ -10,14 +10,12 @@ void callback(const intera_core_msgs::EndpointStateConstPtr& msg)
 {
 
   ws_msg.header = msg->header;
-
-  ws_msg.wrench.force.x = msg->wrench.force.x;
-  ws_msg.wrench.force.y = msg->wrench.force.y;
-  ws_msg.wrench.force.z = msg->wrench.force.z;
-
-  ws_msg.wrench.torque.x = msg->wrench.torque.x;
-  ws_msg.wrench.torque.y = msg->wrench.torque.y;
-  ws_msg.wrench.torque.z = msg->wrench.torque.z;
+  ws_msg.wrench.force.x = - msg->wrench.force.x;
+  ws_msg.wrench.force.y = - msg->wrench.force.y;
+  ws_msg.wrench.force.z = - msg->wrench.force.z;
+  ws_msg.wrench.torque.x = - msg->wrench.torque.x;
+  ws_msg.wrench.torque.y = - msg->wrench.torque.y;
+  ws_msg.wrench.torque.z = - msg->wrench.torque.z;
 
 }
 
